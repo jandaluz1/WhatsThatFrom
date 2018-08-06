@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import axios from 'axios';
+import apiKey from '../key';
+
 const RECEIVED_MOVIES = 'RECIEVED_MOVIES';
 const RESET = 'RESET';
 
@@ -15,7 +17,7 @@ export const resetState = () => ({
 
 export const fetchMovies = movie => async dispatch => {
   const res = await axios.get(
-    `http://www.omdbapi.com/?apikey=b56a95af&t=${movie}&plot=full`
+    `http://www.omdbapi.com/?apikey=${apiKey}&t=${movie}&plot=full`
   );
   dispatch(receivedMovies(res.data));
 };
