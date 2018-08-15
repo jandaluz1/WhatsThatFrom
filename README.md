@@ -1,1 +1,1 @@
-##Seach for you that movie quote you can't remember where its from
+React Navtive app to search for that movie quote you can't remember where its from.
