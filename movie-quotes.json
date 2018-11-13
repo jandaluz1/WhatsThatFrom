@@ -16,7 +16,7 @@
     "quote": "Toto, Ive a feeling were not in Kansas anymore.",
     "movie": "The Wizard of Oz"
   },
-  { "quote": "Heres looking at you, kid.", "movies": "Casablanca" },
+  { "quote": "Heres looking at you, kid.", "movie": "Casablanca" },
   { "quote": "Go ahead, make my day.", "movie": "Sudden Impact" },
   {
     "quote": "All right, Mr. DeMille, Im ready for my close-up.",
@@ -264,5 +264,9 @@
     "quote": "Ill get you, my pretty, and your little dog too!",
     "movie": "The Wizard of Oz"
   },
-  { "quote": "Im the King of the World", "movie": "Titanic" }
+  { "quote": "Im the King of the World", "movie": "Titanic" },
+  {
+    "quote": "If youre not first, you're last.",
+    "movie": "Talladega Nights: The Ballad of Ricky Bobby"
+  }
 ]
