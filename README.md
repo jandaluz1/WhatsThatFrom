@@ -6,11 +6,12 @@ Seach for you that movie quote you can't remember where its from
 
 Used this simple project to learn the basics of React Native
 
-###Demo
+### Demo
 
-![](./Demo/WTF_Demo.gif)
+Click for video demo
+[![demo](./Demo/WTF_Demo.gif)](http://www.youtube.com/watch/YVWwp3AdOxU)
 
-###Technologies
+### Technologies
 
 - React Navtive
 - Redux
