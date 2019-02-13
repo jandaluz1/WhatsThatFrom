@@ -1,29 +1,46 @@
 import React from 'react';
+import { View, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
+  Container,
+  Content,
+  List,
+  ListItem,
+  Thumbnail,
+  Text
+} from 'native-base';
 
 const QuoteList = props => {
   const { navigate } = props.navigation;
+  const matches = props.navigation.state.params;
   return (
-    <View>
-      <FlatList
-        data={props.navigation.state.params}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.item}
-            onPress={() => navigate('Info', { movie: item })}
-          >
-            <Text style={styles.text}>{item.quote}</Text>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+    // <View>
+    //   <FlatList
+    //     data={props.navigation.state.params}
+    //     keyExtractor={(item, index) => index.toString()}
+    //     renderItem={({ item }) => (
+    //       <TouchableOpacity
+    //         style={styles.item}
+    //         onPress={() => navigate('Info', { movie: item })}
+    //       >
+    //         <Text style={styles.text}>{item.quote}</Text>
+    //       </TouchableOpacity>
+    //     )}
+    //   />
+    // </View>
+    <Container>
+      <Content>
+        <List>
+          {matches.map((item, idx) => (
+            <ListItem
+              key={idx}
+              onPress={() => navigate('Info', { movie: item })}
+            >
+              <Text>{item.quote}</Text>
+            </ListItem>
+          ))}
+        </List>
+      </Content>
+    </Container>
   );
 };
 

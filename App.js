@@ -10,7 +10,7 @@ const RootNavigator = createStackNavigator({
   Main: {
     screen: Home,
     navigationOptions: {
-      headerTitle: 'Home'
+      headerTitle: "What's That From"
     }
   },
   Movies: {

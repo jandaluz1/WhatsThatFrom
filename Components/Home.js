@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Container, Content, H2, Input, Button, Text } from 'native-base';
 import quotes from '../quotes';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    width: '95%'
+    justifyContent: 'center'
+    // paddingLeft: 5,
+    // paddingRight: 5
     // backgroundColor: '#333444'
   },
   // content: {
@@ -17,12 +19,11 @@ const styles = StyleSheet.create({
   title: {
     color: '#333444',
     fontSize: 22,
-    justifyContent: 'center'
+    // justifyContent: 'center',
+    textAlign: 'center'
   },
   inputField: {
-    backgroundColor: '#aaaaaa',
-    // height: 1,
-    fontSize: 18
+    //
   }
 });
 
@@ -64,7 +65,7 @@ export default class Home extends Component {
       //   <Button onPress={this.handleSubmit} title="Search for Quote" />
       // </View>
       <Container style={styles.container}>
-        <Content style={styles.content}>
+        <Content padder style={styles.content}>
           <H2 style={styles.title}>What's That From</H2>
           <Input
             full
@@ -77,7 +78,7 @@ export default class Home extends Component {
             info
             onPress={this.handleSubmit}
             full
-            disabled={this.state.guess.length < 1}
+            disabled={this.state.guess.length < 4}
           >
             <Text>Search</Text>
           </Button>

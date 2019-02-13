@@ -21,6 +21,7 @@ class MovieDetails extends Component {
 
   render() {
     const movie = this.props.movie;
+    console.log('MOVIE', movie);
     return (
       <View style={styles.container}>
         <View style={{ flex: 1, flexDirection: 'column' }}>
