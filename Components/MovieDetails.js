@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, Button } from 'react-native';
+// import { View, Text, StyleSheet, Image, Button } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
+import {
+  Container,
+  Button,
+  Footer,
+  Left,
+  Right,
+  Text,
+  H1,
+  H3
+} from 'native-base';
 import { connect } from 'react-redux';
 import { fetchMovies, resetState } from '../store';
 
@@ -21,21 +32,28 @@ class MovieDetails extends Component {
 
   render() {
     const movie = this.props.movie;
-    console.log('MOVIE', movie);
     return (
-      <View style={styles.container}>
-        <View style={{ flex: 1, flexDirection: 'column' }}>
-          <View>
-            <Text style={styles.heading}>{movie.Title}</Text>
-            <Text>{movie.Year}</Text>
-            <Text style={styles.director}>Director: {movie.Director}</Text>
-          </View>
-          <Image style={styles.image} source={{ uri: movie.Poster }} />
-        </View>
-        <Text>Cast: {movie.Actors}</Text>
-        <Text style={{ margin: 10 }}>Plot: {movie.Plot}</Text>
-        <Button onPress={this.onPress} title="Another Quote?" />
-      </View>
+      <Container style={{ flexDirection: 'column' }}>
+        <Container style={{ flexDirection: 'row' }}>
+          <Left style={{ flex: 1 }}>
+            <Image style={styles.image} source={{ uri: movie.Poster }} />
+          </Left>
+          <Right style={{ flex: 2 }}>
+            <H1>{movie.Title}</H1>
+            <H3>{movie.Year}</H3>
+          </Right>
+        </Container>
+        <Container>
+          <Text>Cast:{movie.Actors}</Text>
+          <Text>Director:{movie.Director}</Text>
+          <Text>Plot:{movie.Plot}</Text>
+        </Container>
+        <Footer>
+          <Button full onPress={this.onPress}>
+            <Text>Another Quote?</Text>
+          </Button>
+        </Footer>
+      </Container>
     );
   }
 }
@@ -48,8 +66,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    width: 300,
-    height: 300,
+    width: 200,
+    height: 200,
     resizeMode: 'contain'
   },
   heading: {

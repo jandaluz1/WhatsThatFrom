@@ -16,7 +16,7 @@ const RootNavigator = createStackNavigator({
   Movies: {
     screen: QuoteList,
     navigationOptions: {
-      headerTitle: 'Quotes'
+      headerTitle: 'Results'
     }
   },
   Info: {
